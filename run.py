@@ -2,6 +2,9 @@ import numpy as np
 import cv2
 import time
 
+import io
+import sys
+
 import mouse
 import keyboard
 from pymouse import PyMouse
@@ -11,6 +14,8 @@ from PIL import Image
 from mss import mss
 
 from selector import capture_screen_region
+
+sys.stdout = io.StringIO()
 
 while not keyboard.is_pressed('q'):
 	pass
@@ -37,6 +42,13 @@ fishing_cooldown = 4.0
 m = PyMouse()
 k = PyKeyboard()
 
+stopped = False
+def handle_stop(event):
+	global stopped
+	if event.name == 'q':
+		stopped = True
+
+keyboard.hook(lambda event: handle_stop(event))
 with mss() as sct:
 	while True:
 		mouse_pos = None
@@ -77,8 +89,8 @@ with mss() as sct:
 		cv2.namedWindow('feesh',cv2.WND_PROP_FULLSCREEN)
 		cv2.setWindowProperty('feesh', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 		# vid_writer.write(img)
-		if cv2.waitKey(1) & 0xFF == ord('q'):
+		if stopped:
 			cv2.destroyAllWindows()
 			# vid_writer.release()
+			keyboard.unhook_all()
 			break
-

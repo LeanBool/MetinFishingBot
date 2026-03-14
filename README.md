@@ -1,4 +1,4 @@
-Note: this script takes control of your cursor and keyboard while active to be stealthy, it requires root privileges on linux.
+Note: this script takes control of your cursor and keyboard while active to be stealthy, it might require root privileges on linux.
 
 Uses https://github.com/TimLeitch/Screen-Region-Capture-Tool for selection of screen region. Slightly modified to work on linux, if it doesn't work for you, download the original and rename it to selector.py
 
@@ -6,4 +6,4 @@ Uses https://github.com/TimLeitch/Screen-Region-Capture-Tool for selection of sc
 - Start fishing and press q to open a drag-and-drop selection overlay
 - Select the area the bot is supposed to see, make sure no gui elements of the fishing panel are included
 - Press q again and select the clickable area (the fishing circle)
-- To quit: alt+tab into the bot's window and press q
+- To quit: press q
