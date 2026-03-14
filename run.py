@@ -84,7 +84,7 @@ with mss() as sct:
 		cv2.namedWindow('feesh',cv2.WND_PROP_FULLSCREEN)
 		cv2.setWindowProperty('feesh', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 		# vid_writer.write(img)
-		if stopped:
+		if stopped or cv2.waitKey(1) & 0xFF == ord('q'):
 			cv2.destroyAllWindows()
 			# vid_writer.release()
 			keyboard.unhook_all()
