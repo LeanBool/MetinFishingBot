@@ -1,7 +1,8 @@
+Untested on Windows.
+
 Note: this script takes control of your cursor and keyboard while active to be stealthy, it might require root privileges on linux.
 
 Uses https://github.com/TimLeitch/Screen-Region-Capture-Tool for selection of screen region. Slightly modified to work on linux, if it doesn't work for you, download the original and rename it to selector.py
-
 Uses font from DejaVu Fonts https://dejavu-fonts.github.io/Download.html
 
 - Start script ./run
