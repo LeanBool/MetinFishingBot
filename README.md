@@ -1,4 +1,7 @@
-# Untested on Windows
+Demo video of downloading and using the bot: https://www.viddler.com/rsopR9
+
+Note: Untested on Windows
+
 Note: this script takes control of your cursor and keyboard while active to be stealthy, it might require root privileges on linux.
 
 Uses https://github.com/TimLeitch/Screen-Region-Capture-Tool for selection of screen region. Slightly modified to work on linux.
