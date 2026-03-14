@@ -92,7 +92,7 @@ class ScreenSelector:
     def __init__(self):
         self.root = tk.Tk()
         self.root.wait_visibility(self.root)
-        self.root.wm_attributes('-alpha', 0.3)  # Make window semi-transparent
+        self.root.wm_attributes('-alpha', 0.3)  # Changed for linux
         self.root.attributes('-fullscreen', True)
         self.root.attributes('-topmost', True)
 
