@@ -1,11 +1,15 @@
 if [ ! -d "venv" ]; then
     echo "Creating virtual environment..."
     virtualenv venv&>/dev/null
+    echo "Activating virtual environment..."
+    source venv/bin/activate
+    echo "Installing requirements..."
+    pip install -r requirements.txt&>/dev/null
+else
+    source venv/bin/activate
+    pip install -r requirements.txt&>/dev/null
 fi
-echo "Activating virtual environment..."
-source venv/bin/activate
-echo "Installing requirements..."
-pip install -r requirements.txt&>/dev/null
+
 
 FONTPATH=`python -c 'import sysconfig; print(sysconfig.get_paths()["purelib"])'`/cv2/qt/fonts
 if [ ! -d $FONTPATH ]; then
@@ -14,5 +18,13 @@ if [ ! -d $FONTPATH ]; then
     echo "Copying font file over to cv2 site-lib..."
     cp font.ttf $FONTPATH/font.ttf
 fi
+
 echo "Starting bot..."
-sudo ./venv/bin/python run.py
+OLD_STTY=$(stty -g)
+cleanup() {
+    stty "$OLD_STTY"
+}
+trap cleanup EXIT INT TERM
+stty -echo -icanon min 0 time 0
+stty -echo -icanon min 0 time 0 < /dev/tty
+sudo stdbuf -oL -eL sudo ./venv/bin/python run.py
