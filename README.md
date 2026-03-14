@@ -11,7 +11,7 @@ Uses font from DejaVu Fonts https://dejavu-fonts.github.io/Download.html
 - Install ProtonGE https://github.com/GloriousEggroll/proton-ge-custom?tab=readme-ov-file#installation
 - In Steam click "Add a non-steam game to your library" and select the Metin patcher executable.
 - Right click on the newly added executable in your Steam library, click on Properties and under Compatibility check the box saying "force the use of a specific compatibility tool". Select the Proton-GE Version you installed (named GE-ProtonXX-XX).
-- Et voilà, you should now be able to play Metin.
+- Et voilà, you can now launch Metin through your Steam client.
 
 
 ## Setup fishing bot:
