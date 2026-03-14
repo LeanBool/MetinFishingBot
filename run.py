@@ -12,12 +12,14 @@ from mss import mss
 
 from selector import capture_screen_region
 
+print("Press q then select fishing UI (do NOT include outside of UI or any other UI elements except for water)")
 while not keyboard.is_pressed('q'):
 	pass
 
 region = capture_screen_region()
 rect_fishing = {"left": region.x1, "top": region.y1, "width": region.x2 - region.x1, "height": region.y2 - region.y1}
 
+print("Press q again and select the boundaries of the fishing bubble in the center of the ui")
 while not keyboard.is_pressed('q'):
 	pass
 
@@ -25,6 +27,7 @@ region = capture_screen_region()
 center = np.array([region.x1 + (region.x2 - region.x1)//2, region.y1 + (region.y2 - region.y1)//2])
 radius = min(region.x2 - region.x1, region.y2 - region.y1)//2
 
+print("Running... Press q to quit")
 # vid_writer = cv2.VideoWriter('output.avi', cv2.VideoWriter_fourcc(*'XVID'), 200.0, (128, 128), 0)
 
 last_seen_timeout = 0.5
