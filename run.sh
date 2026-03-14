@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 if [ ! -d "venv" ]; then
     echo "Creating virtual environment..."
     virtualenv venv&>/dev/null

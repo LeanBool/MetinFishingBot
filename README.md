@@ -8,10 +8,8 @@ Uses font from DejaVu Fonts https://dejavu-fonts.github.io/Download.html
 Setup:
 Run the following command:
 
-```git clone https://github.com/LeanBool/MetinFishingBot.git && cd MetinFishingBot && ./run```
-
-
-- Start script ./run
+```git clone https://github.com/LeanBool/MetinFishingBot.git && cd MetinFishingBot && ./run.sh```
+- Start script ./run.sh
 - Start fishing and press q to open a drag-and-drop selection overlay
 - Select the area the bot is supposed to see, make sure no gui elements of the fishing panel are included
 - Press q again and select the clickable area (the fishing circle)
