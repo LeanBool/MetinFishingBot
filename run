@@ -1,1 +1,18 @@
-sudo ./venv/bin/python run.py&>/dev/null
+if [ ! -d "venv" ]; then
+    echo "Creating virtual environment..."
+    virtualenv venv&>/dev/null
+fi
+echo "Activating virtual environment..."
+source venv/bin/activate
+echo "Installing requirements..."
+pip install -r requirements.txt&>/dev/null
+
+FONTPATH=`python -c 'import sysconfig; print(sysconfig.get_paths()["purelib"])'`/cv2/qt/fonts
+if [ ! -d $FONTPATH ]; then
+    echo "Creating font directory..."
+    mkdir $FONTPATH
+    echo "Copying font file over to cv2 site-lib..."
+    cp font.ttf $FONTPATH/font.ttf
+fi
+echo "Starting bot..."
+sudo ./venv/bin/python run.py

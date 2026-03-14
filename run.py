@@ -2,9 +2,6 @@ import numpy as np
 import cv2
 import time
 
-import io
-import sys
-
 import mouse
 import keyboard
 from pymouse import PyMouse
@@ -14,8 +11,6 @@ from PIL import Image
 from mss import mss
 
 from selector import capture_screen_region
-
-sys.stdout = io.StringIO()
 
 while not keyboard.is_pressed('q'):
 	pass
